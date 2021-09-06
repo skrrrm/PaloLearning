@@ -1,0 +1,82 @@
+nav:
+  - Welcome: 'index.md'
+  - Basics:
+    - Commit: 'basics/commit.md'
+    - General Settings: 'basics/general_settings.md'
+    - Message of the day & header: 'basics/motd.md'
+    - Users: 'basics/users.md'
+    - Groups: 'basics/groups.md'
+  - Networking:
+    - Zones: 'networking/zones.md'
+    - Virtual Routers: 'networking/virtual_routers.md'
+    - Interfaces: 'networking/interfaces.md'
+    - Site-to-Site VPN: 'networking/site-to-site-vpn.md'
+  - Policies:
+    - Security Policies: 'policies/policies.md'
+  - Filtering: 
+    - Filtering: 'filtering/filtering.md'
+    - App-ID filtering: 'filtering/app-id.md'
+  - Network Profiles:
+    - Zone Protection: 'network_profiles/zoneprotection.md'
+
+site_name: Palo Alto Learning Wiki
+site_url: https://example.com
+
+theme:
+  name: material
+  font: false
+  icon:
+    logo: material/wall
+  favicon: images/favicon.png
+  language: en
+  palette:
+  - scheme: default
+    primary: green
+    accent: blue grey
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+  - scheme: slate
+    primary: green
+    accent: blue grey
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
+  features:
+    - header.autohide
+    - search.suggest
+    - search.highlight
+    - navigation.instant
+      #- navigation.tabs
+      #- navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+
+plugins:
+  #  - git-revision-date
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition # enables colored blocks mid article
+  - attr_list # improves image handling
+  - pymdownx.details # enables collapsible admonitions
+  - footnotes
+  - meta # adds support for front matter
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - pymdownx.highlight: #code highlight
+      linenums: true
+  - pymdownx.tabbed # enables tabs for embedded blocks
+  - pymdownx.snippets
+  - pymdownx.superfences # allows for nesting of code blocks inside other blocks
+  - pymdownx.keys
+
+copyright: 2021 &copy; Alex Skram Jensen & Kasper E. Jeppesen - Licensed under GPLv3
+#extra:
+  #social:
+    #- icon:
+    #link:
+    #name:
