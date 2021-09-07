@@ -18,9 +18,11 @@ nav:
     - App-ID filtering: 'filtering/app-id.md'
   - Network Profiles:
     - Zone Protection: 'network_profiles/zoneprotection.md'
+  - Authentication:
+    - LDAP: 'authentication/ldap.md'
 
 site_name: Palo Alto Learning Wiki
-site_url: https://example.com
+site_url: 
 
 theme:
   name: material
