@@ -21,8 +21,9 @@ nav:
   - Authentication:
     - LDAP: 'authentication/ldap.md'
 
-site_name: Palo Alto Learning Wiki
-site_url: 
+site_name: PaloLearning
+site_url: https://skrrrm.github.io/PaloLearning/
+repo_url: https://github.com/skrrrm/PaloLearning
 
 theme:
   name: material
