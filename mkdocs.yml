@@ -76,8 +76,12 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences # allows for nesting of code blocks inside other blocks
   - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
 
-copyright: 2021 &copy; Alex Skram Jensen & Kasper E. Jeppesen - Licensed under GPLv3
+copyright: 2021 &copy; skrrrm & K.E.J - Licensed under GPLv3
 #extra:
   #social:
     #- icon:
