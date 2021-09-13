@@ -10,6 +10,7 @@ nav:
     - Zones: 'networking/zones.md'
     - Virtual Routers: 'networking/virtual_routers.md'
     - Interfaces: 'networking/interfaces.md'
+    - DHCP Relay: 'networking/dhcp_relay.md'
     - Site-to-Site VPN: 'networking/site-to-site-vpn.md'
   - Policies:
     - Security Policies: 'policies/policies.md'
