@@ -1,6 +1,9 @@
 # Integration with Windows AD via LDAP
 
-The goal of this section was to be able to log - user logins in the firewall monitor - from devices hooked up on Windows AD.
+The goal of this section: 
+* Being able to log traffic of users and see which user is generating the traffic
+* Being able to create policies based on Active Directory Users & Groups
+This can be achieved with LDAP and integration with the Active Directory, this way IPs will be mapped to user credentials.
 
 ## Log User Setup in AD
 
@@ -9,6 +12,10 @@ In short you need to configure the following steps on the DC/AD.
 1. Create a user - the user should only be used for the authentication and logging to the firewall.
 2. Add him to the groups; ***Event Log Reader***, ***Distributed COM Users*** and possibly the ***Remote Desktop Users*** if you want to be able to log remote logins to devices.
 te Desktop Use
+
+!!! tip
+    If the above groups does not work, try to add the user to the *administrators group*.
+
 !!! note
     Not quite sure about Remote Desktop Users, if it's correct that the *log user* must be a member of this group in order to log remote access to devices in the AD.
 
@@ -20,7 +27,7 @@ There are a couple of prerequisities, that must setup up in order to make the LD
 
 ***Device*** &rarr; ***Setup*** &rarr; ***Services*** &rarr; ***Service Route Configuration***
 
-You must set the necessary protocols (*LDAP & UID Agent*) to the interfaces where AD is gonna authenticate the firewall through. Otherwise the firewall only able to receive LDAP traffic through the management interface.
+You must set the necessary protocols (*LDAP & UID Agent*) to the interfaces where AD is gonna authenticate the firewall through. Otherwise the firewall will only able to receive LDAP traffic through the management interface.
 
 ![service_route_configuration1](../images/service_route_configuration1.png)
 
@@ -56,6 +63,25 @@ Remember to enable *User Identification* for the zones, where you want to log us
 ***Network*** &rarr; ***Zones*** &rarr; ***the-zone-where-DC-is-connected / the-zone-where-clients-are-connected***
 
 ![zones_uid](../images/zones_uid.png)
+
+### LDAP Server Profile
+
+We will need the LDAP Server profile in order to pull out users and groups from AD. The profile is going to be used later in the configuration.
+
+***Device &rarr; Server Profiles &rarr; LDAP &rarr; Add***
+
+1. Set the servers and ports
+2. Set server settings accordinglingy
+    * Type: AD
+    * Base DN: The domain name, seems it must be in the form of "dc=*domain*, dc=*local*
+    * Bind DN: The user, made earlier in the docs, that is going to be doing the AD integration
+    * Password: The users password
+    * Untick *Require SSL/TLS secured connection*
+
+!!! SSL/TLS
+    This should be mandatory, but we have yet to make it work. Needs more work.
+
+![ldap_server_profile](../images/ldap_server_profile.png)
 
 ### Group Mapping
 
